@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from certman.models import CertStatic, CertScanFile, CertManage, CertScanRecord, CertScanUrl
+from certman.models import CertId, CertType, CertStatus, CertControl, CertScanUrl,CertScanRecord,CertManage,CertScanFile
 
 
 # Create your views here.
@@ -14,7 +14,7 @@ def index(request):
 
 
 def dashboard(request):
-    cert_records = cert_records.objects.order_by('cert_hostname')
+    cert_records = CertScanRecord.objects.order_by('cert_hostname')
     cert_list = {'Record': cert_records}
     print('cert_list')
     return render(request, "certman/index.html", context=cert_list)
