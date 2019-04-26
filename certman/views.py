@@ -16,5 +16,4 @@ def index(request):
 def dashboard(request):
     cert_records = CertScanRecord.objects.order_by('cert_hostname')
     cert_list = {'Record': cert_records}
-    print('cert_list')
     return render(request, "certman/index.html", context=cert_list)

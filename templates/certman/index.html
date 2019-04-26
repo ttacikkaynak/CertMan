@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load static %}
 <html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -534,10 +535,10 @@ ak
 											<div class="infobox-icon">
 												<i class="ace-icon fa fa-bell"></i>
 											</div>
-                                            {% if cert_expired %}
+                                            {% if cert_alert %}
 											<div class="infobox-data">
-												<span class="infobox-data-number">{{ cert_expired }}</span>
-												<div class="infobox-content"><b>Expired</b></div>
+												<span class="infobox-data-number">{{ cert_alert }}</span>
+												<div class="infobox-content"><b>Alerts</b></div>
 											</div>
                                             {% endif %}
 
@@ -551,11 +552,12 @@ ak
 											<div class="infobox-icon">
 												<i class="ace-icon fa fa-flag"></i>
 											</div>
-
+                                            {% if cert_expired %}
 											<div class="infobox-data">
-												<span class="infobox-data-number">2</span>
-												<div class="infobox-content"><b>Error</b></div>
+												<span class="infobox-data-number">{{ cert_expired }}</span>
+												<div class="infobox-content"><b>Expired</b></div>
 											</div>
+                                            {% endif %}
 
 											<div class="stat stat-important">4%</div>
 										</div>
@@ -584,23 +586,6 @@ ak
 											<div class="badge badge-success">
 												7.2%
 												<i class="ace-icon fa fa-yarrow-up"></i>
-											</div>
-										</div>
-
-										<div class="infobox infobox-blue2">
-											<div class="infobox-progress">
-												<div class="easy-pie-chart percentage" data-percent="42" data-size="46">
-													<span class="percent">42</span>%
-												</div>
-											</div>
-
-											<div class="infobox-data">
-												<span class="infobox-text"><b>Alerts</b	></span>
-
-												<div class="infobox-content">
-													<span class="bigger-110">~</span>
-													12 records
-												</div>
 											</div>
 										</div>
 
