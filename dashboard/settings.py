@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'dashboard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {'read_default_file': '/etc/mysql/django.cnf'},
+        'OPTIONS': {'read_default_file': '/appdata/projects/dashboard/mysql.cnf'},
     }
 }
 
