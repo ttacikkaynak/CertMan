@@ -12,23 +12,25 @@ services:
        MYSQL_USER: 'eagle'
        MYSQL_PASSWORD: 'r00t123'
        MYSQL_ROOT_PASSWORD: 'r00t123'
+    command:
+      - /bin/bash
+      - -c
+      - |
+        sleep 5
+        nc -lk 0.0.0.0 3306
   web:
     build: .
     image: yildirims
-    command: python manage.py runserver 0.0.0.0:8000
+    command:
+      - /bin/bash
+      - -c
+      - |
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/appdata/projects/dashboard
     ports:
       - "8000:8000"
     depends_on:
-      - migration
       - db
-  migration:
-    image: yildirims
-    command: python manage.py migrate --noinput
-    volumes:
-      - .:/appdata/projects/dashboard
-    depends_on:
-      - db
-
 
