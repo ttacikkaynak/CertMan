@@ -1,7 +1,0 @@
-!includedir /etc/mysql/conf.d/
-!includedir /etc/mysql/mysql.conf.d/
-[client]
-database = certmanv2
-user = eagle
-password = r00t123
-default-character-set = utf8

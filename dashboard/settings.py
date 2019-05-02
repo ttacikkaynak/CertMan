@@ -81,7 +81,11 @@ WSGI_APPLICATION = 'dashboard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {'read_default_file': '/appdata/projects/dashboard/mysql.cnf'},
+        'NAME': 'certmanv2',
+        'USER': 'eagle',
+        'PASSWORD': 'r00t123',
+        'HOST': 'db',
+        'PORT': 3306,
     }
 }
 
