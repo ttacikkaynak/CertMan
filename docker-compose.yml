@@ -5,11 +5,14 @@ services:
     image: mysql:5.7
     ports:
       - '3306:3306'
+    volumes:
+      - ./config/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
     environment:
        MYSQL_DATABASE: 'certmanv2'
        MYSQL_USER: 'eagle'
        MYSQL_PASSWORD: 'r00t123'
        MYSQL_ROOT_PASSWORD: 'r00t123'
+
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
