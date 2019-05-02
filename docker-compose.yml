@@ -14,18 +14,8 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/appdata/projects/dashboard
+      - .:/my_app_dir
     ports:
       - "8000:8000"
-    depends_on:
-      - db
-  migration:
-    build: .
-    image: app
-    command: python manage.py migrate
-    volumes:
-      - .:/appdata/projects/dashboard
-    links:
-      - db
     depends_on:
       - db
