@@ -14,7 +14,7 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/my_app_dir
+      - .:/appdata/projects/dashboard
     ports:
       - "8000:8000"
     depends_on:
