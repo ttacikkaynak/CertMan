@@ -8,7 +8,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-This project can be  run with docker-compose and also manually.
+This project can be  run with docker-compose and also manually run on a server which mysql and  python installed. 
+
+Traditional Methods:
+
+*Install Mysql
+*Download Binaries
+*Create Mysql user and  database
+
 
 ```
 #mkdir /appdata/
