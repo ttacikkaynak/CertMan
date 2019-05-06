@@ -1,4 +1,4 @@
-# Manage  and monitor  SSL  Certificates witch  CERT MAN
+# Manage  and monitor  SSL  Certificates with  CERT MAN
 
 This project aims to manage and monitor SSL certificate lifecycle. 
 
