@@ -9,12 +9,10 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 This project can be  run with docker-compose and also manually.
--mysql
--python
--requiremnet.txt
 
 ```
-Give examples
+#mkdir /appdata/
+#git clone https://github.com/yildirima/CertMan.git
 ```
 
 ### Installing
