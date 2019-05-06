@@ -1,6 +1,6 @@
-# Manage  and monitor  SSL  Certificates
+# Manage  and monitor  SSL  Certificates witch  CERT MAN
 
-One Paragraph of project description goes here
+This project aims to manage and monitor SSL certificate lifecycle. 
 
 ## Getting Started
 
@@ -8,7 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+This project can be  run with docker-compose and also manually.
+-mysql
+-python
+-requiremnet.txt
 
 ```
 Give examples
