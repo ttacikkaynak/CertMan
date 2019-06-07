@@ -1,7 +1,7 @@
 version: '3.3'
 
 services:
-  db:
+  mysqlDB:
     image: mysql:5.7
     ports:
       - '3306:3306'
@@ -12,25 +12,21 @@ services:
        MYSQL_USER: 'eagle'
        MYSQL_PASSWORD: 'r00t123'
        MYSQL_ROOT_PASSWORD: 'r00t123'
-    command:
-      - /bin/bash
-      - -c
-      - |
-        sleep 5
-        nc -lk 0.0.0.0 3306
-  web:
+  Djangoweb:
     build: .
     image: yildirims
     command:
       - /bin/bash
       - -c
       - |
+        sleep 20
         python manage.py migrate
+        sleep 5
         python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/appdata/projects/dashboard
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - mysqlDB
 

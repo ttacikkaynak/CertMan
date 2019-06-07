@@ -47,8 +47,13 @@ def isOpen(ip, port):
 def scanNetwork(host, port):
     for ip in IPSet([host]):
         if (isOpen(str(ip), str(port))):
-            detail_cert = getssl.detail_certificate(str(ip), str(port))
-            updateCert(detail_cert, ip, port, "Port Control", "Web Server")
+            try:
+                detail_cert = getssl.detail_certificate(str(ip), str(port))
+                print("OK-Connection", str(ip))
+                updateCert(detail_cert, ip, port, "Port Control", "Web Server")
+            except:
+                detail_cert=['SSL Check Error', 'SSL Check Error', 0, 0, '0', '0', 'SSL Check Error', '0']
+
         else:
             print("NOK", str(ip))
 

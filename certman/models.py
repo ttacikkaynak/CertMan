@@ -105,7 +105,7 @@ class CertScanRecord(models.Model):
 
     class Meta:
         verbose_name = _("Show Scan Result")
-        verbose_name = _("Show Scan Result")
+        verbose_name_plural = _("Show Scan Result")
 
     def __str__(self):
         return self.cert_hostname
