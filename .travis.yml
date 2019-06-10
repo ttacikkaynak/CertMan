@@ -10,7 +10,8 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script:
-  - /usr/local/bin/docker-compose up
+  - docker-compose build
+  - docker-compose up -d
 
 
 install:
