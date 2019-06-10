@@ -4,7 +4,7 @@ services:
   mysqlDB:
     image: mysql:5.7
     ports:
-      - '3306:3306'
+      - '3307:3307'
     volumes:
       - ./config/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
     environment:
