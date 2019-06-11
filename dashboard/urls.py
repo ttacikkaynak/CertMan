@@ -19,6 +19,8 @@ from certman import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^dashboard/', include('certman.url')),
-    re_path(r'^index/', include('certman.url')),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('user_login/', views.user_login, name='user_login'),
+    path('', views.dashboard, name='dashboard'),
+    path('user_logout/', views.user_login, name='user_logout'),
 ]
