@@ -6,6 +6,16 @@ from django.http  import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
+
+
+def error_404(request, exception):
+        data = {}
+        return render(request,'certman/404.html', data)
+
+def error_500(request,  exception):
+        data = {}
+        return render(request,'certman/500.html', data)
+
 # Create your views here.
 @login_required
 def dashboard(request):

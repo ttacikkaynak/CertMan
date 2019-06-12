@@ -24,3 +24,8 @@ urlpatterns = [
     path('', views.dashboard, name='dashboard'),
     path('user_logout/', views.user_login, name='user_logout'),
 ]
+
+handler404 = 'certman.views.error_404'
+handler500 = 'certman.views.error_500'
+handler403 = 'certman.views.error_403'
+handler400 = 'certman.views.error_400'
