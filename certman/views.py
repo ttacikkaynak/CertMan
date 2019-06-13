@@ -8,13 +8,11 @@ from django.contrib.auth.decorators import login_required
 
 
 
-def error_404(request, exception):
-        data = {}
-        return render(request,'certman/404.html', data)
+def error_404(request):
+        return render(request, 'certman/404.html', {})
 
-def error_500(request,  exception):
-        data = {}
-        return render(request,'certman/500.html', data)
+def error_500(request):
+        return render(request, 'certman/500.html', {})
 
 # Create your views here.
 @login_required

@@ -18,14 +18,9 @@ from django.urls import path, re_path, include
 from certman import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),    
     path('dashboard/', views.dashboard, name='dashboard'),
     path('user_login/', views.user_login, name='user_login'),
     path('', views.dashboard, name='dashboard'),
     path('user_logout/', views.user_login, name='user_logout'),
 ]
-
-handler404 = 'certman.views.error_404'
-handler500 = 'certman.views.error_500'
-handler403 = 'certman.views.error_403'
-handler400 = 'certman.views.error_400'

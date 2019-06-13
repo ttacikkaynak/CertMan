@@ -26,10 +26,10 @@ SWF_DIR = os.path.join(BASE_DIR, 'static/swf')
 SECRET_KEY = 'g7je^6p1&1e71^fikh+)neun3k5j)f99o^oo)ij-skehja8lqj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS =  ['localhost', '127.0.0.1']
+ALLOWED_HOSTS =  ['*']
 
 
 # Application definition
