@@ -24,6 +24,6 @@ install:
      sudo tee -a /etc/apt/sources.list
   - sudo apt-get update
   - docker version
-  # Update docker-compose via pip
+  # Updatas docker-compose via pip
   - sudo pip install docker-compose
   - docker-compose version
