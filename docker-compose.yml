@@ -21,7 +21,7 @@ services:
       - |
         sleep 20
         python manage.py migrate
-        sleep 5
+        sleep 6
         python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/appdata/projects/dashboard
