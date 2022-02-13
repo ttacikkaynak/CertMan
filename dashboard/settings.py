@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'certmanv2',
         'USER': 'eagle',
         'PASSWORD': 'r00t123',
-        'HOST': 'mysqlDB',
+        'HOST': 'localhost',
         'PORT': 3307,
     }
 }
