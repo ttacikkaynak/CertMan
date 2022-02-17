@@ -3,7 +3,8 @@ from certman.models import CertId, CertType, CertStatus, CertControl, CertScanUr
 
 from django.contrib.auth import  authenticate, login, logout
 from django.http  import HttpResponseRedirect, HttpResponse
-from django.urls import reverse
+#from django.urls import reverse
+from django.urls import *
 from django.contrib.auth.decorators import login_required
 
 

@@ -7,9 +7,9 @@ import django
 django.setup()
 import signal
 import sys
-import getssl
-from importrecord import  updateCert
-from certman.models import CertManage, CertScanUrl, CertScanFile
+from certman import getssl
+from certman.importrecord import  updateCert
+from certman.models import CertScanFile
 
 
 
@@ -36,5 +36,3 @@ def getfilerecords():
         platform = scanfile[i][4]
         certificate = scanfile[i][5]
         detail_cert = scanFile(str(host), str(service), str(platform), str(certificate))
-
-getfilerecords()

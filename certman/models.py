@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from certman import getssl
+import certman.importrecord
 
 # Create your models here.
 class CertId(models.Model):
@@ -54,6 +57,8 @@ class CertScanFile(models.Model):
     cert_platform = models.CharField(max_length=255)
     cert_data = models.TextField()
 
+    # method for updating
+
     class Meta:
         verbose_name = _("Add Certificate File")
         verbose_name_plural = _("Add Certificate File")
@@ -61,6 +66,12 @@ class CertScanFile(models.Model):
     def __str__(self):
         return self.cert_hostname
 
+# method for updating
+@receiver(post_save, sender=CertScanFile, dispatch_uid="update_cert_status")
+def update_cert(sender, instance, **kwargs):
+    detail_cert = getssl.getfile_certificate(instance.cert_data)
+    certman.importrecord.updateCert(detail_cert, instance.cert_hostname, "-", "File Control", "Web Server")
+    instance.cert_id.save()
 
 class CertScanUrl(models.Model):
     cert_id = models.ForeignKey(CertId, on_delete=models.PROTECT)
@@ -72,6 +83,7 @@ class CertScanUrl(models.Model):
     class Meta:
         verbose_name = _("Add URL")
         verbose_name_plural = _("Add URL")
+
 
     def __str__(self):
         return self.cert_hostname

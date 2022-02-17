@@ -9,10 +9,9 @@ from netaddr import *
 import socket
 import signal
 import sys
-import getssl
-from importrecord import updateCert
-from certman.models import CertManage, CertScanUrl, CertScanFile
-
+from certman import getssl
+from certman.importrecord import updateCert
+from certman.models import CertManage
 
 
 def signal_handler(sig, frame):
@@ -66,4 +65,4 @@ def getrecords():
         port = network[i][2]
         detail_cert = scanNetwork(str(host), str(port))
 
-getrecords()
+#getrecords()
