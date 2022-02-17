@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'dashboard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'certmanv2',
+        'NAME': 'certman',
         'USER': 'eagle',
         'PASSWORD': 'r00t123',
         'HOST': 'localhost',
-        'PORT': 3307,
+        'PORT': 3306,
     }
 }
 
