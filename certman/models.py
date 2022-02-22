@@ -68,9 +68,9 @@ class CertScanFile(models.Model):
 
 # method for updating
 @receiver(post_save, sender=CertScanFile, dispatch_uid="update_cert_status")
-def update_cert(sender, instance, **kwargs):
-    detail_cert = getssl.getfile_certificate(instance.cert_data)
-    certman.importrecord.updateCert(detail_cert, instance.cert_hostname, "-", "File Control", "Web Server")
+def post_update_cert(sender, instance, **kwargs):
+    detail_cert = getssl.get_file_certificate(instance.cert_data)
+    certman.importrecord.update_cert(detail_cert, instance.cert_hostname, "-", "File Control", "Web Server")
     instance.cert_id.save()
 
 class CertScanUrl(models.Model):

@@ -32,7 +32,7 @@ def detail_certificate(host, port):
     return detail_cert
 
 
-def getfile_certificate(certificate):
+def get_file_certificate(certificate):
     date_now = datetime.now()
     detail_cert = []
     x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, certificate)

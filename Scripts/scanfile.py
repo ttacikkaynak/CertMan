@@ -8,7 +8,7 @@ django.setup()
 import signal
 import sys
 from certman import getssl
-from certman.importrecord import  updateCert
+from certman.importrecord import  update_cert
 from certman.models import CertScanFile
 
 
@@ -22,8 +22,8 @@ signal.signal(signal.SIGINT, signal_handler)
 
 
 def scanFile(host, service, platform, certificate):
-    detail_cert = getssl.getfile_certificate(certificate)
-    updateCert(detail_cert, host, "-", "File Control", "Web Server")
+    detail_cert = getssl.get_file_certificate(certificate)
+    update_cert(detail_cert, host, "-", "File Control", "Web Server")
 
 
 

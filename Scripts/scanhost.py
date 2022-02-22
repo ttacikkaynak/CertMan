@@ -10,7 +10,7 @@ import socket
 import signal
 import sys
 from certman import getssl
-from certman.importrecord import updateCert
+from certman.importrecord import update_cert
 from certman.models import CertManage
 
 
@@ -49,7 +49,7 @@ def scanNetwork(host, port):
             try:
                 detail_cert = getssl.detail_certificate(str(ip), str(port))
                 print("OK-Connection", str(ip))
-                updateCert(detail_cert, ip, port, "Port Control", "Web Server")
+                update_cert(detail_cert, ip, port, "Port Control", "Web Server")
             except:
                 detail_cert=['SSL Check Error', 'SSL Check Error', 0, 0, '0', '0', 'SSL Check Error', '0']
 

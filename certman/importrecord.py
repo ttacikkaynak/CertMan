@@ -36,7 +36,7 @@ def certid(paramdb):
     return t
 
 
-def updateCert(detail_cert, host, port, control_type, cert_type):
+def update_cert(detail_cert, host, port, control_type, cert_type):
     cert_date = datetime.now()
     control_type = controltype(control_type)
     cert_type = certtype(cert_type)
